@@ -13,5 +13,6 @@ class userSerializer(serializers.ModelSerializer):
             }
         }
 
-
-    
+    def create(self,validated):
+        user=User.objects.create_user(**validated)
+        return user
